@@ -11,3 +11,5 @@ public class S01PApplication {
     }
 
 }
+
+// JPA가 만들어준 DB 테이블을 보고 반드시 다듬어야함!!
