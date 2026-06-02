@@ -1,6 +1,7 @@
 package hellojpa.domain;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -14,9 +15,9 @@ public class Delivery extends BaseEntity {
     @Column(name = "delivery_id")
     private Long id;
 
-    private String city;
-    private String street;
-    private String zipcode;
+    @Embedded
+    private Address address;
+
     private DeliveryStatus status;
 
     // 여기서 LAZY가 적용이 될 수 가 없음
