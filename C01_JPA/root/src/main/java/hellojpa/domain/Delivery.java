@@ -2,6 +2,7 @@ package hellojpa.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
@@ -18,6 +19,8 @@ public class Delivery extends BaseEntity {
     private String zipcode;
     private DeliveryStatus status;
 
-    @OneToOne(mappedBy = "delivery")
+    // 여기서 LAZY가 적용이 될 수 가 없음
+    // - 이유: 주인이 아니여서 어차피 가져올려면 조회를 해야함
+    @OneToOne(mappedBy = "delivery", fetch = FetchType.LAZY)
     private Order order;
 }
