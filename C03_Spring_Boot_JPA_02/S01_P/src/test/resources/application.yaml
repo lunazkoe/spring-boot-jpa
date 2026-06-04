@@ -1,0 +1,20 @@
+spring:
+#   datasource:
+#     url: jdbc:h2:mem:test
+#     username: sa
+#     password:
+#     driver-class-name: org.h2.Driver
+#
+#   jpa:
+#     hibernate:
+#       ddl-auto: create
+#     properties:
+#       hibernate:
+#         show_sql: true
+#         format_sql: true
+# 별도의 설정이 없으면 인메모리 모드로 알아서 돌림
+# 추가로 ddl-auto: create-drop으로 알아서 돌림
+
+logging.level:
+  org.hibernate.SQL: debug
+  org.hibernate.orm.jdbc.bind: trace
